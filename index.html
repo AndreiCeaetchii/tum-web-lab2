@@ -1,14 +1,56 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My landing page</title>
-    <!-- CHANGE THESE VALUES -->
+    <title>TutorMD — Online Tutoring in Moldova</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ADD YOUR CODE HERE -->
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <div class="container nav-container">
+        <a href="#" class="logo">TutorMD</a>
+        <ul class="nav-links">
+          <li><a href="#subjects">Subjects</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary btn-sm nav-cta">Get Started</a>
+        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <ul class="mobile-menu">
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#pricing" class="btn btn-primary btn-sm">Get Started</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <h1>Find Your Perfect Tutor in Moldova</h1>
+        <p class="hero-subtitle">
+          Connect with top-rated tutors online. Whether you need help with
+          math, science, languages, or IT — TutorMD matches you with
+          qualified educators for personalized one-on-one sessions.
+        </p>
+        <div class="hero-buttons">
+          <a href="#subjects" class="btn btn-primary">Find a Tutor</a>
+          <a href="#contact" class="btn btn-outline">Become a Tutor</a>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
