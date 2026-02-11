@@ -1,24 +1,25 @@
-# Lab 2 - Landing page
+# TutorMD - Online Tutoring in Moldova
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+A landing page for **TutorMD** — an online tutoring platform connecting students in Moldova with qualified tutors across a wide range of subjects including Mathematics, Physics, Chemistry, Languages, IT & Programming, and History.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+The page features a sticky navigation bar, hero section with call-to-action buttons, subject cards grid, a step-by-step "How It Works" section, student testimonials, transparent pricing tiers, a contact form, and a responsive mobile menu — all built with vanilla HTML and CSS.
 
-## Customer requirements
+## Live Demo
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+[https://home.tutormd.online](https://home.tutormd.online)
 
-## Dev requirements
+## Screenshots
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+![Hero section](screenshots/img.png)
+![Subjects section](screenshots/img_1.png)
+![How It Works section](screenshots/img_2.png)
+![Testimonials](screenshots/img_3.png)
+![Pricing section](screenshots/img_4.png)
+![Contact section](screenshots/img_5.png)
 
-## Other requirements:
 
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+## Tech Stack
+
+- HTML5
+- CSS3 (Flexbox, Grid, custom properties)
+- No JavaScript frameworks or CSS libraries
