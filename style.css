@@ -24,6 +24,9 @@ html {
   .hamburger {
     display: flex !important;
   }
+  .mobile-cta-bar {
+    display: block !important;
+  }
 }
 
 /* Mascot entrance animation (Tailwind has no animation-delay or fill-mode) */
