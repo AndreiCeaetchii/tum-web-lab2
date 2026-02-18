@@ -5,169 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TutorMD — Online Tutoring in Moldova</title>
     <link rel="stylesheet" href="reset.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        },
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1a56db',
+              'primary-dark': '#1041b0',
+              accent: '#2563eb',
+              'light-bg': '#f0f5ff',
+              dark: '#111827',
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="font-sans text-gray-800 leading-relaxed bg-white [&_a]:no-underline [&_a]:text-inherit">
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <div class="container nav-container">
-        <a href="#" class="logo">TutorMD</a>
-        <ul class="nav-links">
-          <li><a href="#subjects">Subjects</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="sticky top-0 bg-dark z-[100] py-4" id="navbar">
+      <input type="checkbox" id="nav-toggle" class="hidden" />
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <a href="#" class="text-2xl font-bold text-white tracking-tight">TutorMD</a>
+        <ul class="hidden md:flex gap-7">
+          <li><a href="#subjects" class="text-gray-300 text-[0.95rem] hover:text-white transition-colors">Subjects</a></li>
+          <li><a href="#how-it-works" class="text-gray-300 text-[0.95rem] hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#testimonials" class="text-gray-300 text-[0.95rem] hover:text-white transition-colors">Testimonials</a></li>
+          <li><a href="#pricing" class="text-gray-300 text-[0.95rem] hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="#contact" class="text-gray-300 text-[0.95rem] hover:text-white transition-colors">Contact</a></li>
         </ul>
-        <a href="#pricing" class="btn btn-primary btn-sm nav-cta">Get Started</a>
-        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <a href="#pricing" class="hidden md:inline-block bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors">Get Started</a>
+        <label for="nav-toggle" class="hamburger hidden cursor-pointer flex-col gap-[5px] p-1 md:!hidden" aria-label="Toggle menu">
+          <span class="block w-6 h-0.5 bg-white rounded-sm transition-transform duration-300"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-sm transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-white rounded-sm transition-transform duration-300"></span>
         </label>
       </div>
-      <ul class="mobile-menu">
-        <li><a href="#subjects">Subjects</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#pricing" class="btn btn-primary btn-sm">Get Started</a></li>
+      <ul class="mobile-menu hidden flex-col bg-dark px-6 pb-4">
+        <li><a href="#subjects" class="block py-3 text-gray-300 text-base border-b border-gray-800 hover:text-white transition-colors">Subjects</a></li>
+        <li><a href="#how-it-works" class="block py-3 text-gray-300 text-base border-b border-gray-800 hover:text-white transition-colors">How It Works</a></li>
+        <li><a href="#testimonials" class="block py-3 text-gray-300 text-base border-b border-gray-800 hover:text-white transition-colors">Testimonials</a></li>
+        <li><a href="#pricing" class="block py-3 text-gray-300 text-base border-b border-gray-800 hover:text-white transition-colors">Pricing</a></li>
+        <li><a href="#contact" class="block py-3 text-gray-300 text-base border-b border-gray-800 hover:text-white transition-colors">Contact</a></li>
+        <li><a href="#pricing" class="inline-block mt-2 bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold">Get Started</a></li>
       </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="container hero-content">
-        <h1>Find Your Perfect Tutor in Moldova</h1>
-        <p class="hero-subtitle">
+    <section class="bg-gradient-to-br from-dark via-[#1e3a5f] to-primary py-16 sm:py-20 md:py-24 lg:py-28 text-center" id="hero">
+      <div class="max-w-[720px] mx-auto px-4 sm:px-6">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Find Your Perfect Tutor in Moldova</h1>
+        <p class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-8 md:mb-10">
           Connect with top-rated tutors online. Whether you need help with
           math, science, languages, or IT — TutorMD matches you with
           qualified educators for personalized one-on-one sessions.
         </p>
-        <div class="hero-buttons">
-          <a href="#subjects" class="btn btn-primary">Find a Tutor</a>
-          <a href="#contact" class="btn btn-outline">Become a Tutor</a>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="#subjects" class="bg-primary text-white px-7 py-3 rounded-lg font-semibold hover:bg-primary-dark hover:shadow-lg transition-all">Find a Tutor</a>
+          <a href="#contact" class="text-white px-7 py-3 rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-dark transition-all">Become a Tutor</a>
         </div>
       </div>
     </section>
 
     <!-- Subjects Section -->
-    <section class="subjects" id="subjects">
-      <div class="container">
-        <h2 class="section-title">Subjects We Cover</h2>
-        <p class="section-subtitle">
+    <section class="py-12 sm:py-16 md:py-20" id="subjects">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">Subjects We Cover</h2>
+        <p class="text-center text-gray-500 text-sm sm:text-base md:text-lg max-w-[560px] mx-auto mb-10 md:mb-12">
           From exact sciences to humanities — our tutors are ready to help you excel.
         </p>
-        <div class="subjects-grid">
-          <div class="subject-card">
-            <span class="subject-icon">&#x1D4E7;</span>
-            <h3>Mathematics</h3>
-            <p>Algebra, geometry, calculus, and statistics for all levels from primary school to university.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#x1D4E7;</span>
+            <h3 class="text-lg font-semibold mb-2">Mathematics</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Algebra, geometry, calculus, and statistics for all levels from primary school to university.</p>
           </div>
-          <div class="subject-card">
-            <span class="subject-icon">&#9883;</span>
-            <h3>Physics</h3>
-            <p>Mechanics, thermodynamics, electromagnetism, and optics explained with clarity.</p>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#9883;</span>
+            <h3 class="text-lg font-semibold mb-2">Physics</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Mechanics, thermodynamics, electromagnetism, and optics explained with clarity.</p>
           </div>
-          <div class="subject-card">
-            <span class="subject-icon">&#9874;</span>
-            <h3>Chemistry</h3>
-            <p>Organic, inorganic, and analytical chemistry with step-by-step problem solving.</p>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#9874;</span>
+            <h3 class="text-lg font-semibold mb-2">Chemistry</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Organic, inorganic, and analytical chemistry with step-by-step problem solving.</p>
           </div>
-          <div class="subject-card">
-            <span class="subject-icon">&#127760;</span>
-            <h3>Languages</h3>
-            <p>English, Romanian, French, Russian, and German with native and certified speakers.</p>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#127760;</span>
+            <h3 class="text-lg font-semibold mb-2">Languages</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">English, Romanian, French, Russian, and German with native and certified speakers.</p>
           </div>
-          <div class="subject-card">
-            <span class="subject-icon">&#128187;</span>
-            <h3>IT &amp; Programming</h3>
-            <p>Web development, Python, Java, algorithms, and computer science fundamentals.</p>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#128187;</span>
+            <h3 class="text-lg font-semibold mb-2">IT &amp; Programming</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Web development, Python, Java, algorithms, and computer science fundamentals.</p>
           </div>
-          <div class="subject-card">
-            <span class="subject-icon">&#128214;</span>
-            <h3>History</h3>
-            <p>World history, Moldovan history, and social studies for exam preparation.</p>
+          <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <span class="text-4xl block mb-4">&#128214;</span>
+            <h3 class="text-lg font-semibold mb-2">History</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">World history, Moldovan history, and social studies for exam preparation.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">
+    <section class="py-12 sm:py-16 md:py-20 bg-light-bg" id="how-it-works">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">How It Works</h2>
+        <p class="text-center text-gray-500 text-sm sm:text-base md:text-lg max-w-[560px] mx-auto mb-10 md:mb-12">
           Getting started is simple — just three easy steps.
         </p>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Browse Tutors</h3>
-            <p>Search by subject, price, rating, or availability. Read reviews and find your ideal match.</p>
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-4 md:gap-6">
+          <div class="text-center flex-1 max-w-[280px]">
+            <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-bold flex items-center justify-center mx-auto mb-5">1</div>
+            <h3 class="text-base sm:text-lg font-semibold mb-2">Browse Tutors</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Search by subject, price, rating, or availability. Read reviews and find your ideal match.</p>
           </div>
-          <div class="step-arrow">&#10132;</div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Book a Session</h3>
-            <p>Pick a convenient time slot and book your lesson in just a few clicks. No commitment required.</p>
+          <div class="text-3xl text-primary mt-0 md:mt-3.5 rotate-90 md:rotate-0">&#10132;</div>
+          <div class="text-center flex-1 max-w-[280px]">
+            <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-bold flex items-center justify-center mx-auto mb-5">2</div>
+            <h3 class="text-base sm:text-lg font-semibold mb-2">Book a Session</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Pick a convenient time slot and book your lesson in just a few clicks. No commitment required.</p>
           </div>
-          <div class="step-arrow">&#10132;</div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Learn Online</h3>
-            <p>Join your session via video call with an interactive whiteboard and real-time chat support.</p>
+          <div class="text-3xl text-primary mt-0 md:mt-3.5 rotate-90 md:rotate-0">&#10132;</div>
+          <div class="text-center flex-1 max-w-[280px]">
+            <div class="w-14 h-14 rounded-full bg-primary text-white text-xl font-bold flex items-center justify-center mx-auto mb-5">3</div>
+            <h3 class="text-base sm:text-lg font-semibold mb-2">Learn Online</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Join your session via video call with an interactive whiteboard and real-time chat support.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-      <div class="container">
-        <h2 class="section-title">What Our Students Say</h2>
-        <p class="section-subtitle">
+    <section class="py-12 sm:py-16 md:py-20" id="testimonials">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">What Our Students Say</h2>
+        <p class="text-center text-gray-500 text-sm sm:text-base md:text-lg max-w-[560px] mx-auto mb-10 md:mb-12">
           Thousands of students across Moldova trust TutorMD for their learning goals.
         </p>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <div class="bg-light-bg rounded-lg p-6 sm:p-7 flex flex-col justify-between">
+            <p class="text-sm sm:text-[0.97rem] leading-relaxed text-gray-800 mb-6 italic">
               &ldquo;My math grades improved from a 6 to a 9 in just two months.
               The tutor explained everything so clearly — I actually enjoy math now!&rdquo;
             </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">A</div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">A</div>
               <div>
-                <strong>Ana M.</strong>
-                <span>Mathematics</span>
+                <strong class="block font-semibold text-sm">Ana M.</strong>
+                <span class="text-xs text-gray-500">Mathematics</span>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+          <div class="bg-light-bg rounded-lg p-6 sm:p-7 flex flex-col justify-between">
+            <p class="text-sm sm:text-[0.97rem] leading-relaxed text-gray-800 mb-6 italic">
               &ldquo;I passed my BAC exam in English with a top score thanks to the
               weekly sessions. The flexibility of online learning made all the difference.&rdquo;
             </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">D</div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">D</div>
               <div>
-                <strong>Dmitri R.</strong>
-                <span>English Language</span>
+                <strong class="block font-semibold text-sm">Dmitri R.</strong>
+                <span class="text-xs text-gray-500">English Language</span>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+          <div class="bg-light-bg rounded-lg p-6 sm:p-7 flex flex-col justify-between">
+            <p class="text-sm sm:text-[0.97rem] leading-relaxed text-gray-800 mb-6 italic">
               &ldquo;As a university student, I needed help with algorithms and data structures.
               My tutor was a working developer who gave me real-world perspective.&rdquo;
             </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">M</div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">M</div>
               <div>
-                <strong>Maria L.</strong>
-                <span>IT &amp; Programming</span>
+                <strong class="block font-semibold text-sm">Maria L.</strong>
+                <span class="text-xs text-gray-500">IT &amp; Programming</span>
               </div>
             </div>
           </div>
@@ -176,111 +195,110 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-      <div class="container">
-        <h2 class="section-title">Simple, Transparent Pricing</h2>
-        <p class="section-subtitle">
+    <section class="py-12 sm:py-16 md:py-20 bg-light-bg" id="pricing">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">Simple, Transparent Pricing</h2>
+        <p class="text-center text-gray-500 text-sm sm:text-base md:text-lg max-w-[560px] mx-auto mb-10 md:mb-12">
           Choose a plan that fits your learning needs. All plans include access to our online platform.
         </p>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <h3>Basic</h3>
-            <div class="price">150 <span>MDL / session</span></div>
-            <ul class="features">
-              <li>&#10003; 1 session per week</li>
-              <li>&#10003; 60-minute lessons</li>
-              <li>&#10003; Chat support</li>
-              <li>&#10003; Session recordings</li>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-start">
+          <div class="bg-white border border-gray-200 rounded-lg p-7 sm:p-9 text-center relative hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <h3 class="text-lg sm:text-xl font-semibold mb-4">Basic</h3>
+            <div class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">150 <span class="text-sm sm:text-base font-normal text-gray-500">MDL / session</span></div>
+            <ul class="text-left mb-7">
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 1 session per week</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 60-minute lessons</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Chat support</li>
+              <li class="py-2 text-sm text-gray-800">&#10003; Session recordings</li>
             </ul>
-            <a href="#contact" class="btn btn-outline">Choose Basic</a>
+            <a href="#contact" class="block w-full py-3 rounded-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">Choose Basic</a>
           </div>
-          <div class="pricing-card popular">
-            <div class="popular-badge">Most Popular</div>
-            <h3>Standard</h3>
-            <div class="price">120 <span>MDL / session</span></div>
-            <ul class="features">
-              <li>&#10003; 2 sessions per week</li>
-              <li>&#10003; 90-minute lessons</li>
-              <li>&#10003; Priority chat support</li>
-              <li>&#10003; Session recordings</li>
-              <li>&#10003; Progress reports</li>
+          <div class="bg-white border-2 border-primary rounded-lg p-7 sm:p-9 text-center relative shadow-xl lg:scale-105 hover:-translate-y-1 transition-all duration-200">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold px-4 py-1 rounded-full">Most Popular</div>
+            <h3 class="text-lg sm:text-xl font-semibold mb-4">Standard</h3>
+            <div class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">120 <span class="text-sm sm:text-base font-normal text-gray-500">MDL / session</span></div>
+            <ul class="text-left mb-7">
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 2 sessions per week</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 90-minute lessons</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Priority chat support</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Session recordings</li>
+              <li class="py-2 text-sm text-gray-800">&#10003; Progress reports</li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Choose Standard</a>
+            <a href="#contact" class="block w-full py-3 rounded-lg font-semibold bg-primary text-white hover:bg-primary-dark hover:shadow-lg transition-all">Choose Standard</a>
           </div>
-          <div class="pricing-card">
-            <h3>Premium</h3>
-            <div class="price">100 <span>MDL / session</span></div>
-            <ul class="features">
-              <li>&#10003; Unlimited sessions</li>
-              <li>&#10003; 90-minute lessons</li>
-              <li>&#10003; 24/7 support</li>
-              <li>&#10003; Session recordings</li>
-              <li>&#10003; Progress reports</li>
-              <li>&#10003; Exam prep materials</li>
+          <div class="bg-white border border-gray-200 rounded-lg p-7 sm:p-9 text-center relative hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+            <h3 class="text-lg sm:text-xl font-semibold mb-4">Premium</h3>
+            <div class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">100 <span class="text-sm sm:text-base font-normal text-gray-500">MDL / session</span></div>
+            <ul class="text-left mb-7">
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Unlimited sessions</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 90-minute lessons</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; 24/7 support</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Session recordings</li>
+              <li class="py-2 text-sm text-gray-800 border-b border-gray-100">&#10003; Progress reports</li>
+              <li class="py-2 text-sm text-gray-800">&#10003; Exam prep materials</li>
             </ul>
-            <a href="#contact" class="btn btn-outline">Choose Premium</a>
+            <a href="#contact" class="block w-full py-3 rounded-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">Choose Premium</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <p class="section-subtitle">
+    <section class="py-12 sm:py-16 md:py-20" id="contact">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">Contact Us</h2>
+        <p class="text-center text-gray-500 text-sm sm:text-base md:text-lg max-w-[560px] mx-auto mb-10 md:mb-12">
           Have questions or ready to get started? Reach out and we'll get back to you within 24 hours.
         </p>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-item">
-              <h4>&#9993; Email</h4>
-              <p>mihaimodrca@gmail.com</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
+          <div>
+            <div class="mb-6">
+              <h4 class="text-base font-semibold text-gray-800 mb-1">&#9993; Email</h4>
+              <p class="text-sm text-gray-500">mihaimodrca@gmail.com</p>
             </div>
-            <div class="contact-item">
-              <h4>&#9742; Phone</h4>
-              <p>+373 68 334 060</p>
+            <div class="mb-6">
+              <h4 class="text-base font-semibold text-gray-800 mb-1">&#9742; Phone</h4>
+              <p class="text-sm text-gray-500">+373 68 334 060</p>
             </div>
-            <div class="contact-item">
-              <h4>&#9872; Location</h4>
-              <p>Chisinau, Moldova</p>
+            <div class="mb-6">
+              <h4 class="text-base font-semibold text-gray-800 mb-1">&#9872; Location</h4>
+              <p class="text-sm text-gray-500">Chisinau, Moldova</p>
             </div>
           </div>
-          <form class="contact-form" onsubmit="return false;">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+          <form class="flex flex-col gap-3.5" onsubmit="return false;">
+            <input type="text" placeholder="Your Name" required class="px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-800 outline-none focus:border-primary focus:ring-2 focus:ring-blue-200 transition-all" />
+            <input type="email" placeholder="Your Email" required class="px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-800 outline-none focus:border-primary focus:ring-2 focus:ring-blue-200 transition-all" />
+            <textarea rows="5" placeholder="Your Message" required class="px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-800 outline-none resize-y focus:border-primary focus:ring-2 focus:ring-blue-200 transition-all"></textarea>
+            <button type="submit" class="bg-primary text-white px-7 py-3 rounded-lg font-semibold hover:bg-primary-dark hover:shadow-lg transition-all cursor-pointer">Send Message</button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-content">
-        <div class="footer-brand">
-          <a href="#" class="logo">TutorMD</a>
-          <p>Connecting students with the best tutors in Moldova since 2024.</p>
+    <footer class="bg-gray-900 text-gray-300 pt-12 sm:pt-16">
+      <div class="max-w-[1140px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-10">
+        <div>
+          <a href="#" class="text-2xl font-bold text-white tracking-tight">TutorMD</a>
+          <p class="mt-3 text-sm text-gray-400 leading-relaxed">Connecting students with the best tutors in Moldova since 2024.</p>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#subjects">Subjects</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="flex flex-col gap-2.5">
+            <li><a href="#subjects" class="text-sm text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+            <li><a href="#how-it-works" class="text-sm text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+            <li><a href="#testimonials" class="text-sm text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+            <li><a href="#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a></li>
           </ul>
         </div>
-        <div class="footer-contact">
-          <h4>Contact Us</h4>
-          <p>mihaimodrca@gmail.com</p>
-          <p>+373 68 334 060</p>
-          <p>Chisinau, Moldova</p>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contact Us</h4>
+          <p class="text-sm text-gray-400 leading-loose">mihaimodrca@gmail.com</p>
+          <p class="text-sm text-gray-400 leading-loose">+373 68 334 060</p>
+          <p class="text-sm text-gray-400 leading-loose">Chisinau, Moldova</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="container">
+      <div class="mt-10 sm:mt-12 border-t border-gray-800 text-center text-sm text-gray-500 py-5">
+        <div class="max-w-[1140px] mx-auto px-4 sm:px-6">
           <p>&copy; 2025 TutorMD. All rights reserved.</p>
         </div>
       </div>
