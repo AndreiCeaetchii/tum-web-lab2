@@ -25,3 +25,43 @@ html {
     display: flex !important;
   }
 }
+
+/* Mascot entrance animation (Tailwind has no animation-delay or fill-mode) */
+.mascot {
+  opacity: 0;
+  transform: translateY(150%);
+  animation: mascot-enter 0.6s ease-out 3s forwards;
+}
+@keyframes mascot-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mascot continuous animations (custom keyframes) */
+.mascot-owl {
+  animation: mascot-bounce 3s ease-in-out infinite, mascot-tilt 6s ease-in-out infinite;
+}
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes mascot-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+/* Speech bubble triangle (requires ::after pseudo-element) */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #1a56db;
+}
