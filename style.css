@@ -1,11 +1,7 @@
-/* ===== CSS that cannot be replaced by Tailwind utilities ===== */
-
-/* Smooth scrolling (no Tailwind equivalent) */
 html {
   scroll-behavior: smooth;
 }
 
-/* CSS-only hamburger toggle — requires :checked sibling selectors */
 .nav-toggle:checked ~ div .hamburger span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -19,7 +15,6 @@ html {
   display: flex !important;
 }
 
-/* Show hamburger on mobile (toggled by media query + checkbox) */
 @media (max-width: 768px) {
   .hamburger {
     display: flex !important;
@@ -29,7 +24,6 @@ html {
   }
 }
 
-/* Mascot entrance animation (Tailwind has no animation-delay or fill-mode) */
 .mascot {
   opacity: 0;
   transform: translateY(150%);
@@ -42,7 +36,6 @@ html {
   }
 }
 
-/* Mascot continuous animations (custom keyframes) */
 .mascot-owl {
   animation: mascot-bounce 3s ease-in-out infinite, mascot-tilt 6s ease-in-out infinite;
 }
@@ -56,7 +49,6 @@ html {
   75% { transform: rotate(-3deg); }
 }
 
-/* Speech bubble triangle (requires ::after pseudo-element) */
 .speech-bubble::after {
   content: "";
   position: absolute;
