@@ -1,0 +1,101 @@
+<svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg" aria-label="Owl mascot">
+  <defs>
+    <radialGradient id="body" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </radialGradient>
+    <radialGradient id="belly" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </radialGradient>
+    <radialGradient id="eyeW" cx="42%" cy="38%" r="50%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </radialGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2=".3" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .wl{animation:wfl 2.5s ease-in-out infinite;transform-origin:52px 115px}
+    .wr{animation:wfr 2.5s ease-in-out infinite;transform-origin:148px 115px}
+    @keyframes wfl{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
+    @keyframes wfr{0%,100%{transform:rotate(0)}50%{transform:rotate(10deg)}}
+    .eye{animation:blink 4s ease-in-out infinite}
+    @keyframes blink{0%,42%,48%,100%{transform:scaleY(1)}45%{transform:scaleY(.1)}}
+  </style>
+
+  <!-- Graduation cap (sitting on head, top of body is y=74) -->
+  <polygon points="100,40 32,68 100,80 168,68" fill="url(#cap)"/>
+  <rect x="70" y="70" width="60" height="11" rx="3" fill="url(#cap)"/>
+  <line x1="150" y1="66" x2="168" y2="92" stroke="#172554" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="168" cy="95" r="5.5" fill="#fbbf24"/>
+  <circle cx="168" cy="95" r="2.5" fill="#f59e0b"/>
+
+  <ellipse cx="100" cy="142" rx="62" ry="68" fill="url(#body)"/>
+
+  <ellipse cx="100" cy="155" rx="38" ry="44" fill="url(#belly)"/>
+  <path d="M76,142 Q100,136 124,142" fill="none" stroke="#7db8f5" stroke-width="1.2" opacity=".45"/>
+  <path d="M73,155 Q100,148 127,155" fill="none" stroke="#7db8f5" stroke-width="1.2" opacity=".40"/>
+  <path d="M75,168 Q100,161 125,168" fill="none" stroke="#7db8f5" stroke-width="1.2" opacity=".35"/>
+  <path d="M80,180 Q100,174 120,180" fill="none" stroke="#7db8f5" stroke-width="1.2" opacity=".30"/>
+
+  <g class="wl">
+    <path d="M50,108 C28,125 18,155 30,182 Q38,170 44,152 C50,135 52,118 50,108Z" fill="url(#wing)"/>
+    <path d="M33,140 Q42,137 48,145" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".35"/>
+    <path d="M28,156 Q38,152 46,160" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".35"/>
+    <path d="M30,170 Q37,166 43,173" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".30"/>
+  </g>
+
+  <g class="wr">
+    <path d="M150,108 C172,125 182,155 170,182 Q162,170 156,152 C150,135 148,118 150,108Z" fill="url(#wing)"/>
+    <path d="M167,140 Q158,137 152,145" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".35"/>
+    <path d="M172,156 Q162,152 154,160" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".35"/>
+    <path d="M170,170 Q163,166 157,173" fill="none" stroke="#1e3a8a" stroke-width="1" opacity=".30"/>
+  </g>
+
+  <circle cx="72" cy="112" r="30" fill="#1e3a8a" opacity=".2"/>
+  <circle cx="128" cy="112" r="30" fill="#1e3a8a" opacity=".2"/>
+
+  <circle cx="72" cy="112" r="25" fill="url(#eyeW)" stroke="#c7d2e0" stroke-width=".5"/>
+  <circle cx="128" cy="112" r="25" fill="url(#eyeW)" stroke="#c7d2e0" stroke-width=".5"/>
+
+  <circle class="eye" cx="77" cy="112" r="14" fill="#0f172a"/>
+  <circle class="eye" cx="133" cy="112" r="14" fill="#0f172a"/>
+
+  <circle class="eye" cx="77" cy="112" r="8" fill="#1e3a5f" opacity=".35"/>
+  <circle class="eye" cx="133" cy="112" r="8" fill="#1e3a5f" opacity=".35"/>
+
+  <circle cx="83" cy="106" r="5" fill="#fff" opacity=".9"/>
+  <circle cx="139" cy="106" r="5" fill="#fff" opacity=".9"/>
+  <circle cx="72" cy="118" r="2.5" fill="#fff" opacity=".45"/>
+  <circle cx="128" cy="118" r="2.5" fill="#fff" opacity=".45"/>
+
+  <path d="M50,94 Q62,85 92,92" fill="none" stroke="#1e3a8a" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M150,94 Q138,85 108,92" fill="none" stroke="#1e3a8a" stroke-width="2.8" stroke-linecap="round"/>
+
+  <path d="M93,126 Q100,142 107,126 Q100,130 93,126Z" fill="#fbbf24"/>
+  <path d="M96,127 Q100,136 104,127" fill="none" stroke="#e5a800" stroke-width=".7"/>
+
+  <ellipse cx="56" cy="126" rx="8" ry="5" fill="#f9a8c9" opacity=".30"/>
+  <ellipse cx="144" cy="126" rx="8" ry="5" fill="#f9a8c9" opacity=".30"/>
+
+  <g>
+    <ellipse cx="82" cy="212" rx="15" ry="5" fill="#f59e0b"/>
+    <circle cx="71" cy="210" r="4.5" fill="#f59e0b"/>
+    <circle cx="80" cy="208" r="4.5" fill="#f59e0b"/>
+    <circle cx="89" cy="210" r="4.5" fill="#f59e0b"/>
+  </g>
+  <g>
+    <ellipse cx="118" cy="212" rx="15" ry="5" fill="#f59e0b"/>
+    <circle cx="107" cy="210" r="4.5" fill="#f59e0b"/>
+    <circle cx="116" cy="208" r="4.5" fill="#f59e0b"/>
+    <circle cx="125" cy="210" r="4.5" fill="#f59e0b"/>
+  </g>
+</svg>

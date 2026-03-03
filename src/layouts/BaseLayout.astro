@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'TutorMD — Online Tutoring in Moldova', description = 'Connect with top-rated tutors online in Moldova.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="stylesheet" href="/reset.css" />
+    <script>
+      // Tailwind config must be set BEFORE the CDN script
+      window.tailwind = window.tailwind || {};
+    </script>
+    <script is:inline>
+      tailwind = {
+        config: {
+          corePlugins: { preflight: false },
+          theme: {
+            extend: {
+              colors: {
+                primary: '#1a56db',
+                'primary-dark': '#1041b0',
+                accent: '#2563eb',
+                'light-bg': '#f0f5ff',
+                dark: '#111827',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="font-sans text-gray-800 leading-relaxed bg-white [&_a]:no-underline [&_a]:text-inherit">
+    <slot />
+  </body>
+</html>

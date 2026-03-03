@@ -1,0 +1,62 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-toggle:checked ~ div .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle:checked ~ div .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked ~ div .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.nav-toggle:checked ~ .mobile-menu {
+  display: flex !important;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+  .mobile-cta-bar {
+    display: block !important;
+  }
+}
+
+.mascot {
+  opacity: 0;
+  transform: translateY(150%);
+  animation: mascot-enter 0.6s ease-out 3s forwards;
+}
+@keyframes mascot-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mascot-owl {
+  animation: mascot-bounce 3s ease-in-out infinite, mascot-tilt 6s ease-in-out infinite;
+}
+@keyframes mascot-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes mascot-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #1a56db;
+}
