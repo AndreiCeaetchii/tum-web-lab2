@@ -1,0 +1,96 @@
+backend:
+  name: github
+  repo: AndreiCeaetchii/tum-web-lab2
+  branch: master
+  base_url: https://decap-proxy.andreiceaetchii.workers.dev
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: subjects
+    label: Subjects
+    folder: src/content/subjects
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Icon (HTML entity or emoji), name: icon, widget: string }
+      - { label: Order, name: order, widget: number }
+      - { label: Description, name: body, widget: markdown }
+
+  - name: testimonials
+    label: Testimonials
+    folder: src/content/testimonials
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Subject, name: subject, widget: string }
+      - { label: Initial (single uppercase letter), name: initial, widget: string }
+      - { label: Order, name: order, widget: number }
+      - { label: Quote, name: body, widget: markdown }
+
+  - name: pricing
+    label: Pricing Plans
+    folder: src/content/pricing
+    create: false
+    extension: json
+    format: json
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Price, name: price, widget: number }
+      - { label: Currency, name: currency, widget: string, default: MDL }
+      - { label: Period, name: period, widget: string, default: session }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Order, name: order, widget: number }
+      - { label: Features, name: features, widget: list }
+      - { label: CTA Label, name: ctaLabel, widget: string }
+      - label: CTA Style
+        name: ctaStyle
+        widget: select
+        options: [outline, solid]
+
+  - name: settings
+    label: Site Settings
+    files:
+      - label: General
+        name: general
+        file: src/data/site.json
+        fields:
+          - { label: Site Name, name: siteName, widget: string }
+          - label: Meta
+            name: meta
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Primary CTA, name: ctaPrimary, widget: string }
+              - { label: Secondary CTA, name: ctaSecondary, widget: string }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: Location, name: location, widget: string }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Copyright Year, name: copyrightYear, widget: number }
