@@ -1,0 +1,44 @@
+---
+export interface Props {
+  name: string;
+  price: number;
+  currency: string;
+  period: string;
+  featured: boolean;
+  features: string[];
+  ctaLabel: string;
+  ctaStyle: 'outline' | 'solid';
+}
+const { name, price, currency, period, featured, features, ctaLabel, ctaStyle } = Astro.props;
+---
+<div class:list={[
+  "bg-white rounded-lg p-7 sm:p-9 text-center relative transition-all duration-200",
+  featured
+    ? "border-2 border-primary shadow-xl lg:scale-105 hover:-translate-y-1"
+    : "border border-gray-200 hover:shadow-xl hover:-translate-y-1"
+]}>
+  {featured && (
+    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold px-4 py-1 rounded-full">Most Popular</div>
+  )}
+  <h3 class="text-lg sm:text-xl font-semibold mb-4">{name}</h3>
+  <div class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
+    {price} <span class="text-sm sm:text-base font-normal text-gray-500">{currency} / {period}</span>
+  </div>
+  <ul class="text-left mb-7">
+    {features.map((feature, i) => (
+      <li class:list={[
+        "py-2 text-sm text-gray-800",
+        i < features.length - 1 ? "border-b border-gray-100" : ""
+      ]}>&#10003; {feature}</li>
+    ))}
+  </ul>
+  <a
+    href="#contact"
+    class:list={[
+      "block w-full py-3 rounded-lg font-semibold transition-all",
+      ctaStyle === 'solid'
+        ? "bg-primary text-white hover:bg-primary-dark hover:shadow-lg"
+        : "border-2 border-primary text-primary hover:bg-primary hover:text-white"
+    ]}
+  >{ctaLabel}</a>
+</div>
