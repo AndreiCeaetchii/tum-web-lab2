@@ -2,3 +2,5 @@ node_modules/
 dist/
 .astro/
 solar-sphere/
+.idea/
+.claude/
