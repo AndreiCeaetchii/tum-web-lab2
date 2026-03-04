@@ -1,0 +1,19 @@
+---
+export interface Props {
+  headline: string;
+  description: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+}
+const { headline, description, ctaPrimary, ctaSecondary } = Astro.props;
+---
+<section class="bg-gradient-to-br from-dark via-[#1e3a5f] to-primary py-16 sm:py-20 md:py-24 lg:py-28 text-center" id="hero">
+  <div class="max-w-[720px] mx-auto px-4 sm:px-6">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">{headline}</h1>
+    <p class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-8 md:mb-10">{description}</p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="#subjects" class="bg-primary text-white px-7 py-3 rounded-lg font-semibold hover:bg-primary-dark hover:shadow-lg transition-all">{ctaPrimary}</a>
+      <a href="#contact" class="text-white px-7 py-3 rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-dark transition-all">{ctaSecondary}</a>
+    </div>
+  </div>
+</section>
