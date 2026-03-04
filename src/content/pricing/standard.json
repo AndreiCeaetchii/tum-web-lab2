@@ -1,0 +1,17 @@
+{
+  "name": "Standard",
+  "price": 120,
+  "currency": "MDL",
+  "period": "session",
+  "featured": true,
+  "order": 2,
+  "features": [
+    "2 sessions per week",
+    "90-minute lessons",
+    "Priority chat support",
+    "Session recordings",
+    "Progress reports"
+  ],
+  "ctaLabel": "Choose Standard",
+  "ctaStyle": "solid"
+}

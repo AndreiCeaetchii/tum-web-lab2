@@ -1,0 +1,16 @@
+{
+  "name": "Basic",
+  "price": 150,
+  "currency": "MDL",
+  "period": "session",
+  "featured": false,
+  "order": 1,
+  "features": [
+    "1 session per week",
+    "60-minute lessons",
+    "Chat support",
+    "Session recordings"
+  ],
+  "ctaLabel": "Choose Basic",
+  "ctaStyle": "outline"
+}
