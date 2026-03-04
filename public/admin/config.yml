@@ -2,7 +2,7 @@ backend:
   name: github
   repo: AndreiCeaetchii/tum-web-lab2
   branch: master
-  base_url: https://decap-proxy.andreiceaetchii.workers.dev
+  base_url: https://decap-proxy.ceaetchiiandrei.workers.dev
 
 media_folder: public/uploads
 public_folder: /uploads
