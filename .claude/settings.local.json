@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd:*)",
+      "WebSearch",
+      "WebFetch(domain:www.joshwcomeau.com)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)",
+      "Bash(git:*)",
+      "Bash(npm run:*)",
+      "Bash(rm:*)"
+    ]
+  }
+}

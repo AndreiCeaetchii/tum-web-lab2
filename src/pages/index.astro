@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Subjects from '../components/Subjects.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Mascot from '../components/Mascot.astro';
+
+import siteData from '../data/site.json';
+---
+<BaseLayout title={siteData.meta.title} description={siteData.meta.description}>
+  <Nav />
+  <Hero
+    headline={siteData.hero.headline}
+    description={siteData.hero.description}
+    ctaPrimary={siteData.hero.ctaPrimary}
+    ctaSecondary={siteData.hero.ctaSecondary}
+  />
+  <Stats stats={siteData.stats} />
+  <Subjects />
+  <HowItWorks />
+  <Testimonials />
+  <Pricing />
+  <Contact
+    email={siteData.contact.email}
+    phone={siteData.contact.phone}
+    location={siteData.contact.location}
+  />
+  <Footer
+    siteName={siteData.siteName}
+    tagline={siteData.footer.tagline}
+    email={siteData.contact.email}
+    phone={siteData.contact.phone}
+    location={siteData.contact.location}
+    copyrightYear={siteData.footer.copyrightYear}
+  />
+  <Mascot />
+</BaseLayout>
